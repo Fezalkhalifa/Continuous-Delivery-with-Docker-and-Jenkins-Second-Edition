@@ -10,7 +10,7 @@ podTemplate(yaml: '''
           args:
           - 99d
           restartPolicy: Never
-'''){
+'''){   
     node(POD_LABEL){
         stage('k8s'){
             git branch: env.BRANCH_NAME, url:  'https://github.com/Fezalkhalifa/Continuous-Delivery-with-Docker-and-Jenkins-Second-Edition.git'
