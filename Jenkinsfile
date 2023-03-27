@@ -13,7 +13,7 @@ podTemplate(yaml: '''
 '''){
     node(POD_LABEL){
         stage('k8s'){
-            git 'https://github.com/Fezalkhalifa/Continuous-Delivery-with-Docker-and-Jenkins-Second-Edition.git'
+            git branch: env.BRANCH_NAME, url:  'https://github.com/Fezalkhalifa/Continuous-Delivery-with-Docker-and-Jenkins-Second-Edition.git'
             container('centos'){
                stage('Starting Calculator') {
                     sh '''
